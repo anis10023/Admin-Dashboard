@@ -1,0 +1,210 @@
+/* Meyer Reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+   ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+   ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+   ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+*/
+
+:root{
+    --main-clr: #1992D3;
+    --complementary-clr: #E2E8F0;
+    --contrast-clr: #FFFFFF;
+    --accent-clr: #F0B329;
+
+    --main-font: 'Roboto', sans-serif;
+    --normal-font-weight: 400;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.5rem;
+    --bold-font-weight: 700;
+
+    --nav-font-size: 1.1rem;
+    --nav-font-weight: 500;
+    --nav-font-clr: #FFFFFF;
+
+    --body-font-clr: #292929;
+
+    --card-radius: 10px;
+    --img-radius: 100%;
+}
+
+body{
+    font-family: var(--main-font);
+    color: var(--body-font-clr);
+}
+
+.grid-container{
+    max-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 8fr;
+    grid-template-areas: 
+    "sidebar header"
+    "sidebar main";
+}
+
+/* 
+
+Header Layout
+
+*/
+
+#header{
+    grid-area: header;
+     /* background-color: coral;var(--contrast-clr); */
+    display: grid;
+    width: auto;
+    grid-column: 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 15px 30px;
+    font-weight: var(--bold-font-weight);
+    box-shadow: 0px 22px 20px 2px rgba(0,0,0,0.45);
+}
+
+.user-avatar{
+    border-radius: var(--img-radius);
+    width: 40px;
+    height: 40px;
+}
+
+#header .upper-side {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    /* gap: 20rem; */
+}
+
+#header .upper-side > div{
+    flex: 1;
+    display: flex;
+    gap: 30px;
+    justify-content: end;
+    align-items: center;
+}
+
+#header .upper-side > div:last-child{
+    align-self: flex-end;
+}
+
+#header .upper-side .search-bar{
+    background-color: var(--complementary-clr);
+    border: none;
+    border-radius: 15px;
+    padding: 7px 0;
+    flex: 1;
+}
+
+#header .lower-side {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto auto;
+    gap: 15px;
+    padding: 20px 0 10px;
+}
+
+/* 
+
+Sidebar Layout
+
+*/
+
+#sidebar{
+    grid-area: sidebar;
+    background-color: var(--main-clr);
+    color: var(--nav-font-clr);
+    padding: 20px 10px 0;
+
+    display: grid;
+    grid-template-rows: 50px 100px minmax(100px,300px);
+    align-items: start;
+    gap: 50px;
+}
+
+#sidebar > * {
+    margin-left: 20px;
+}
+
+#sidebar .fa-user-doctor{
+    font-size: 2rem;
+    align-self: end;
+
+}
+
+#sidebar .fa-user-doctor span {
+    font-size: 1rem;
+    /* justify-self: end; */
+}
+
+
+#sidebar > ul > li{
+    font-size: var(--nav-font-size);
+    font-weight: var(--nav-font-weight);
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    justify-items: center;
+    gap: 20px;
+
+}
+
+#sidebar > ul > li > span{
+    justify-self: start;
+
+}
+
+#sidebar .extra-nav{
+    align-self: end;
+}
+
+#main-content{
+    grid-area: main;
+    background-color: var(--complementary-clr);
+}
+
+.card{
+    background-color: var(--contrast-clr);
+    border-radius: var(--card-radius);
+}
